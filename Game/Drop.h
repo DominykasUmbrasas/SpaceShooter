@@ -4,11 +4,11 @@
 
 #include <SFML/Graphics.hpp>
 
-class Drop
+class Drop :// public inheriObj
 {
 private:
 
-	sf::Sprite dropSprite;
+	sf::Sprite Sprite;
 	sf::Texture* dropTexture;
 
 	sf::Vector2f direction;

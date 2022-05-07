@@ -7,7 +7,7 @@
 class Enemy
 {
 private:
-	sf::Sprite enemySprite;
+	sf::Sprite Sprite;
 	sf::Texture* enemyTexture;
 
 	int type;

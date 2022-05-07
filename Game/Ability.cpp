@@ -6,8 +6,8 @@ Ability::Ability()
 
 Ability::Ability(sf::Texture* abilityTexture, float posX, float posY)
 {
-	this->abilitySprite.setTexture(*abilityTexture);
-	this->abilitySprite.setPosition(posX, posY);
+	this->Sprite.setTexture(*abilityTexture);
+	this->Sprite.setPosition(posX, posY);
 }
 
 Ability::~Ability()
@@ -17,10 +17,10 @@ Ability::~Ability()
 //Public function
 void Ability::update(sf::Texture* abilityTexture)
 {
-	this->abilitySprite.setTexture(*abilityTexture);
+	this->Sprite.setTexture(*abilityTexture);
 }
 
 void Ability::render(sf::RenderTarget* target)
 {
-	target->draw(this->abilitySprite);
+	target->draw(this->Sprite);
 }

@@ -33,16 +33,15 @@ void Enemy::initVariables()
 		this->hp = hpMax;
 		this->points = 10;
 	}
-	//this->speed = 0.f;
 }
 
 // Cons/Des
 Enemy::Enemy(sf::Texture* enemyTexture, int type, float posX, float posY)
 {
 	this->type = type;
-	this->enemySprite.setTexture(*enemyTexture);
+	this->Sprite.setTexture(*enemyTexture);
 	this->initVariables();
-	this->enemySprite.setPosition(posX, posY);
+	this->Sprite.setPosition(posX, posY);
 }
 
 Enemy::~Enemy()
@@ -51,12 +50,12 @@ Enemy::~Enemy()
 
 const sf::Vector2f Enemy::getPos() const
 {
-	return this->enemySprite.getPosition();
+	return this->Sprite.getPosition();
 }
 
 const sf::FloatRect Enemy::getBounds() const
 {
-	return this->enemySprite.getGlobalBounds();
+	return this->Sprite.getGlobalBounds();
 }
 
 void Enemy::hit(int hit)
@@ -88,19 +87,19 @@ void Enemy::updateMove()
 	case 1:
 		if (this->frameCounter <= 144)
 		{
-			this->enemySprite.move(0.f, this->speed);
+			this->Sprite.move(0.f, this->speed);
 		}
 		else if (this->frameCounter <= 288)
 		{
-			this->enemySprite.move(this->speed * -1, 0.f);
+			this->Sprite.move(this->speed * -1, 0.f);
 		}
 		else if (this->frameCounter <= 432)
 		{
-			this->enemySprite.move(0.f, this->speed);
+			this->Sprite.move(0.f, this->speed);
 		}
 		else if (this->frameCounter <= 576)
 		{
-			this->enemySprite.move(this->speed, 0.f);
+			this->Sprite.move(this->speed, 0.f);
 		}
 		else
 		{
@@ -111,19 +110,19 @@ void Enemy::updateMove()
 	case 2:
 		if (this->frameCounter <= 144)
 		{
-			this->enemySprite.move(this->speed, this->speed * this->frameCounter / 144.f);
+			this->Sprite.move(this->speed, this->speed * this->frameCounter / 144.f);
 		}
 		else if (this->frameCounter <= 288)
 		{
-			this->enemySprite.move(this->speed, this->speed * (this->frameCounter - 144) / 144.f / -2);
+			this->Sprite.move(this->speed, this->speed * (this->frameCounter - 144) / 144.f / -2);
 		}
 		else if (this->frameCounter <= 432)
 		{
-			this->enemySprite.move(this->speed * -1, this->speed * (this->frameCounter - 288) / 144.f);
+			this->Sprite.move(this->speed * -1, this->speed * (this->frameCounter - 288) / 144.f);
 		}
 		else if (this->frameCounter <= 576)
 		{
-			this->enemySprite.move(this->speed * -1, this->speed * (this->frameCounter - 432) / 144.f / -2);
+			this->Sprite.move(this->speed * -1, this->speed * (this->frameCounter - 432) / 144.f / -2);
 		}
 		else
 		{
@@ -132,16 +131,16 @@ void Enemy::updateMove()
 		this->frameCounter++;
 		break;
 	case 3:
-		this->enemySprite.move(0.f, this->speed);
+		this->Sprite.move(0.f, this->speed);
 		break;
 	case 4:
 		if (this->frameCounter <= 144)
 		{
-			this->enemySprite.move(this->speed, this->speed);
+			this->Sprite.move(this->speed, this->speed);
 		}
 		else if (this->frameCounter <= 288)
 		{
-			this->enemySprite.move(this->speed * -1, this->speed);
+			this->Sprite.move(this->speed * -1, this->speed);
 		}
 		else
 		{
@@ -160,5 +159,5 @@ void Enemy::update()
 
 void Enemy::render(sf::RenderTarget* target)
 {
-	target->draw(this->enemySprite);
+	target->draw(this->Sprite);
 }

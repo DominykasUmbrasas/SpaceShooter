@@ -35,14 +35,7 @@ void Player::initVariables()
 }
 
 //	Private functions
-void Player::initTexture()
-{
-	// Load texture
-	//if (!this->playerTexture.loadFromFile("Textures/Player/Plane.png"))
-	//{
-	//	std::cout << "Missing Player Texture\n";
-	//}
-}
+
 
 void Player::initSprite()
 {
@@ -59,7 +52,6 @@ Player::Player(sf::Texture* playerTexture, int type)
 {
 	this->type = type;
 	this->initVariables();
-	this->initTexture();
 	this->playerSprite.setTexture(*playerTexture);
 	this->initSprite();
 }

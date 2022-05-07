@@ -27,7 +27,6 @@ private:
 
 	//Private functions
 	void initVariables();
-	void initTexture();
 	void initSprite();
 public:
 	Player(sf::Texture* playerTexture, int type);

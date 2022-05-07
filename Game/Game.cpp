@@ -114,7 +114,6 @@ void Game::initAbility()
 }
 
 
-
 // Cons/Des
 Game::Game()
 {
@@ -158,39 +157,39 @@ Game::~Game()
 	delete this->player;
 
 	//Delete bullets
-	for (auto* i : this->bullets)
+	for (auto bullet : this->bullets)
 	{
-		delete i;
+		delete bullet;
 	}
 
 	//Delete enemys
-	for (auto* i : this->enemys)
+	for (auto enemy : this->enemys)
 	{
-		delete i;
+		delete enemy;
 	}
 
 	//Delete lifes
-	for (auto* i : this->lifes)
+	for (auto life : this->lifes)
 	{
-		delete i;
+		delete life;
 	}
 
 	//Delete abilities
-	for (auto* i : this->abilities)
+	for (auto ability : this->abilities)
 	{
-		delete i;
+		delete ability;
 	}
 
 	//Delete drops
-	for (auto* i : this->drops)
+	for (auto drop : this->drops)
 	{
-		delete i;
+		delete drop;
 	}
 
 	//Delete textures
-	for (auto& i : this->textures)
+	for (auto& texture : this->textures)
 	{
-		delete i.second;
+		delete texture.second;
 	}
 }
 
@@ -417,13 +416,11 @@ void Game::updateInput()
 				this->bullets.push_back(new Bullet(this->textures["BULLET2"], this->player->getPos().x + this->player->getBounds().width / 2.f + 17, this->player->getPos().y + 5, 0.f, -1.f, 5.5f));
 				this->type2Extra = true;
 			}
-			
 		}
 		else if (this->type == 3)
 		{
 			this->bullets.push_back(new Bullet(this->textures["BULLET3"], this->player->getPos().x + this->player->getBounds().width / 2.f - 17, this->player->getPos().y + 5, 0.f, -1.f, 3.f));
 		}
-		
 	}
 }
 
@@ -640,30 +637,31 @@ void Game::render()
 	this->window->draw(backSprite);
 
 	// Draw all
-	for (auto* i : this->bullets)
+	for (auto bullet : this->bullets)
 	{
-		i->render(this->window);
+		bullet->render(this->window);
 	}
 
 	this->player->render(*this->window);
 
-	for (auto* i : this->enemys)
+	for (auto enemy : this->enemys)
 	{
-		i->render(this->window);
+		enemy->render(this->window);
 	}
 
-	for (auto* i : this->lifes)
+	for (auto life : this->lifes)
 	{
-		i->render(this->window);
+		life->render(this->window);
 	}
 
-	for (auto* i : this->abilities)
+	for (auto abil : this->abilities)
 	{
-		i->render(this->window);
+		abil->render(this->window);
 	}
-	for (auto* i : this->drops)
+
+	for (auto drop : this->drops)
 	{
-		i->render(this->window);
+		drop->render(this->window);
 	}
 
 	this->window->draw(this->text);

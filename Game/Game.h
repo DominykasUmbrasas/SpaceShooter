@@ -29,6 +29,14 @@ private:
 
 	//Resources
 	std::map<std::string, sf::Texture*> textures;
+
+
+	enum ETextures 
+	{
+		ET_ENEMY1, ET_ENEMY2, ENEMY3
+	};
+	std::map<ETextures, sf::Texture*> textures1;
+
 	std::vector<Bullet*> bullets;
 	int score;
 	int wave;

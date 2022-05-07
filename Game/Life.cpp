@@ -6,8 +6,8 @@ Life::Life()
 
 Life::Life(sf::Texture* lifeTexture, float posX, float posY)
 {
-	this->lifeSprite.setTexture(*lifeTexture);
-	this->lifeSprite.setPosition(posX, posY);
+	this->Sprite.setTexture(*lifeTexture);
+	this->Sprite.setPosition(posX, posY);
 }
 
 Life::~Life()
@@ -17,10 +17,10 @@ Life::~Life()
 //Public function
 void Life::update(sf::Texture* lifeTexture)
 {
-	this->lifeSprite.setTexture(*lifeTexture);
+	this->Sprite.setTexture(*lifeTexture);
 }
 
 void Life::render(sf::RenderTarget* target)
 {
-	target->draw(this->lifeSprite);
+	target->draw(this->Sprite);
 }

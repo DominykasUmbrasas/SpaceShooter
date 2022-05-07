@@ -5,7 +5,7 @@ class Life
 {
 private:
 
-	sf::Sprite lifeSprite;
+	sf::Sprite Sprite;
 	sf::Texture* lifeTexture;
 
 public:

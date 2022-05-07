@@ -5,7 +5,7 @@ class Ability
 {
 private:
 
-	sf::Sprite abilitySprite;
+	sf::Sprite Sprite;
 	sf::Texture* abilityTexture;
 
 public:
