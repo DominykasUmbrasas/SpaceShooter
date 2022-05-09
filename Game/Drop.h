@@ -1,10 +1,11 @@
 #pragma once
 
 #include <iostream>
-
 #include <SFML/Graphics.hpp>
 
-class Drop :// public inheriObj
+//#include "inheritObj.h"
+
+class Drop// : public inheriObj
 {
 private:
 

@@ -28,14 +28,19 @@ private:
 	sf::Sprite backSprite;
 
 	//Resources
-	std::map<std::string, sf::Texture*> textures;
-
+	//std::map<std::string, sf::Texture*> textures;
+	
 
 	enum ETextures 
 	{
-		ET_ENEMY1, ET_ENEMY2, ENEMY3
+		ET_BULLET1, ET_BULLET2, ET_BULLET3,
+		ET_PLAYER1, ET_PLAYER2, ET_PLAYER3,
+		ET_LIFEEMTY, ET_LIFEFULL, ET_ABILITYEMTY, ET_ABILITYFULL,
+		ET_ENEMY1, ET_ENEMY2, ET_ENEMY3, ET_ENEMY4,
+		ET_BACKGROUND, ET_BACKGROUND2, ET_BACKGROUND3
 	};
-	std::map<ETextures, sf::Texture*> textures1;
+	std::map<ETextures, sf::Texture*> textures;
+	//std::map<ETextures, sf::Texture*> textures1;
 
 	std::vector<Bullet*> bullets;
 	int score;
